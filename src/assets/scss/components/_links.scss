@@ -6,3 +6,7 @@
 [data-whatinput="touch"] a:focus, button:focus {
   outline: none;
 }
+
+.learn-more .links h4 > a {
+    color: $dark-gray;
+}

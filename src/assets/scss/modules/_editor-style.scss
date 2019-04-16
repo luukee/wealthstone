@@ -3,3 +3,52 @@ body#tinymce{
   max-width: $grid-row-width; // Give the editor a max-width
   padding: rem-calc(20) !important;
 }
+
+h3 > em {
+    color: $primary-color;
+}
+
+h1, .h1 {
+    color: $dark-gray;
+}
+
+h2, .h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h4, .h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    @include breakpoint(medium) {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+}
+
+h3, .h3 {
+    font-size: 1.75rem;
+}
+h2.entry-title {
+    margin-top: 4.5rem;
+}
+
+h2.entry-title {
+    margin-top: 0;
+}
+
+.l-r .copy h2,
+h2.entry-title a {
+    color: $dark-gray;
+    font-size: 2rem;
+    &.primary {
+        color:  $primary-color;
+    }
+}
+
+
+.toggle-button,
+[data-close] {
+    @include baskerville-italic(20px);
+}

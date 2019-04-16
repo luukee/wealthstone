@@ -1,7 +1,24 @@
 // Navigation breakpoints
 .mobile-menu,
 .site-title-bar {
+    padding: 1.5rem .5rem;
+    .title-bar-left {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+    }
+
   @include hide-for(medium);
+}
+
+.mobile-off-canvas-menu .submenu-toggle::after {
+    border-color: $dark-gray transparent transparent;
+}
+
+.custom-logo-link img.custom-logo {
+    @include breakpoint(small) {
+        max-width: 45vw;
+    }
 }
 
 .desktop-menu,
@@ -25,9 +42,9 @@
     padding: 1rem;
 
     a {
-      color: $white;
+      color: $dark-gray;
       font-weight: 600;
-      font-size: rem-calc(15);
+      font-size: rem-calc(20);
     }
   }
 
@@ -40,6 +57,7 @@
     font-size: 1rem;
     color: #B9B9B9;
   }
+
 }
 
 .mobile-menu,
@@ -48,6 +66,48 @@
   .menu .is-active > a {
     background-color: lighten($dark-nav-color, 5%);
   }
+}
+
+// top-banner
+.top-banner {
+    padding: 0.75rem 0;
+    background: $primary-color;
+
+    @include breakpoint(medium) {
+            padding: 1.75rem 0;
+    }
+
+    > .banner-container {
+        >.cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            @include breakpoint(medium) {
+                flex-direction: row;
+            }
+        }
+    }
+    .button {
+        width: min-content;
+        padding: 0.85em 5em;
+        margin: 0 0 0 1rem;
+    }
+    .button,
+    p {
+        color: $white;
+        margin-bottom: 0
+    }
+
+    button.button {
+        border: 1px solid $white;
+    }
+}
+
+// top-bar and footer left to right balance
+.top-bar {
+    max-width: 62rem;
+    margin: 0 auto;
 }
 
 // Tablet and desktop menu
@@ -60,26 +120,65 @@
     padding-left: 1rem;
     line-height: 1.8;
   }
-
-  .menu a {
-    color: #e6e6e6;
-    padding-top: 0;
-    padding-bottom: 0;
-    font-weight: bold;
-    font-size: 0.8rem;
-    line-height: 1;
-
-    &:hover:not(.button) {
-      background-color: #42525D;
+    .top-bar-right {
+        z-index: 9
     }
+    .desktop-menu .menu-item a {
+        line-height: 1.65;
+        @include benton-reg(0.7rem);
+    }
+  .desktop-menu .menu-item.top {
+      > a {
+          color: $primary-color;
+          background: transparent;
+          text-transform: uppercase;
+          padding: 0 1rem 50px 1rem;
+          margin-bottom: 0px;
+          margin-top: 60px;
+        transition: border-bottom 0.1s ease-in;
+      }
+      &.current-menu-item > a {
+          color: $dark-gray;
+      }
+      &:hover > a {
+            content: " ";
+            border-bottom: 3px solid $primary-color;
+            margin-bottom: -3px;
+      }
   }
 
   .menu .active > a { background-color: #ccc; }
 
-  .menu>li:not(.menu-text)>a { padding: 1rem; }
-  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+  .menu>li:not(.menu-text):not(.is-submenu-item)>a {
+  }
+  .menu li.current-menu-item {
+      // border-bottom: 3px solid $primary-color;
+      margin-bottom: -3px;
+  }
 
-  .dropdown.menu .submenu { border: 0; }
+    // login link
+    .log-in {
+        margin-left: 2.5rem;
+    }
+
+  .dropdown.menu {
+
+      .submenu {
+          border: 0;
+      }
+      .is-dropdown-submenu > li {
+          margin-top: 6px;
+          &:first-child {
+              margin-top: 16px;
+          }
+          a {
+              background: transparent;
+          }
+      }
+      &.submenu {
+          background-color: transparent;
+      }
+  }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
   .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
   .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }

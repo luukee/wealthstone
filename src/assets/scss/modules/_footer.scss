@@ -1,23 +1,163 @@
 .footer-container {
-  @include xy-grid-container;
-  border-top: 1px solid $medium-gray;
-  margin-top: rem-calc(60);
+  margin: 0 auto;
+  .menu-footer-container .menu-item:not(.button) {
+        @include breakpoint(medium) {
+            width: min-content;
+            min-width: 13vw;
+            max-width: 29vw;
+        }
+    }
+
+    .footer-grid section {
+        width: 100%;
+        @include breakpoint(medium) {
+            width: fit-content;
+            margin: 0 auto;
+            max-width: 62rem;
+        }
+
+    }
+
+    .widget_nav_menu {
+        .button {
+            height: min-content;
+        }
+    }
+    .buttons {
+        justify-content: center;
+
+    }
+
 }
 
 .footer-grid {
   @include xy-grid;
-  padding: rem-calc(30) 0;
+    padding: 2rem 1rem 2rem 1rem;
+    flex-direction: column;
+    @include breakpoint(medium) {
+        max-width: 62rem;
+        margin: 0 auto;
+        padding: rem-calc(95) 0;
+        flex-direction: row;
+    }
+  @include breakpoint(large) {
+      flex-wrap: nowrap;
+  }
 
   section {
-    @include xy-cell();
-    @include breakpoint(large) {
-      @include xy-cell(auto);
-    }
+    @include xy-cell(full, false, 1rem, left, medium, false);
+
   }
+  figcaption.wp-caption-text {
+      visibility: hidden;
+      max-width: 75%;
+  }
+
+  .widget_nav_menu {
+      padding-bottom: 1rem;
+  }
+    .menu-footer-container {
+
+        .menu-item a {
+            @include benton-reg(.75rem);
+            color: $dark-gray;
+            background: transparent;
+            line-height: 1.5;
+        }
+        .menu-item-has-children > a {
+            @include benton-med(.75rem);
+            text-transform: uppercase;
+        }
+
+    }
 
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
+}
+
+.pre-footer {
+    h2 {
+        margin-top: 0;
+    }
+    a {
+        color: $dark-gray;
+    }
+}
+
+.footer-hero {
+    @include breakpoint(small) {
+      background: url('../images/demo/wealthstone-real-estate-investment4.png') bottom center;
+      background-size: cover;
+      background-position: bottom;
+      padding: rem-calc(65%) 0;
+      margin: 0 0 rem-calc(32);
+      height: auto;
+      position: relative;
+      text-align: left;
+    }
+
+    @include breakpoint(medium) {
+      background: url('../images/demo/wealthstone-real-estate-investment4.png') bottom center;
+      background-size: cover;
+      background-position: center;
+      height: rem-calc(485);
+      margin: 0 0 rem-calc(72);
+    }
+}
+
+.secondary-footer {
+    @include benton-reg(13px);
+
+    .secondary-container {
+        @include xy-grid-container(62rem, 0);
+        border-top: 1px solid $medium-gray;
+        padding: 2rem 0 1rem 0;
+        .cell {
+            text-align: center;
+            @include breakpoint(medium) {
+                text-align: left;
+                &.copywright {
+                    text-align: right;
+                }
+            }
+        }
+        a {
+            color: $dark-gray;
+        }
+    }
+
+}
+
+.talk-to-us-footer {
+    background: $light-light-gray;
+    padding: 6rem 0;
+
+}
+
+
+.menu-footer-container {
+    ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    > ul {
+        @include breakpoint(medium) {
+            flex-direction: row;
+            width: auto;
+        }
+    }
+}
+
+.menu-footer-container {
+    > li.menu-item {
+
+    }
+}
+
+
+.menu-footer-container ul > li {
 }

@@ -1,10 +1,13 @@
 .cards-container {
 
-  @include xy-grid;
-
   .card {
+      padding-bottom: 1rem;
+      width: 100%;
+      border-bottom: 3px solid $primary-color;
+
     @include breakpoint(small) {
-      @include xy-cell(12);
+      // @include xy-cell(12);
+
 
       .card-content {
         padding: 1rem;
@@ -13,9 +16,25 @@
     }
 
     @include breakpoint(medium) {
-      @include xy-cell(1 of 3, true, 0.7rem );
+      // @include xy-cell(1 of 3, true, 0.7rem );
 
     }
 
   }
+
+}
+
+.single-main-image {
+    padding: 0 0 1rem 0;
+    border-bottom: 3px solid $primary-color;
+}
+
+.entry-content {
+    display: none;
+
+    > p > em {
+        @include baskerville(20px);
+        color: $primary-color;
+        font-style: normal;
+    }
 }

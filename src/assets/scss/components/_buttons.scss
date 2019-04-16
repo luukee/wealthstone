@@ -1,8 +1,33 @@
 .sites-button {
-  background: $primary-color;
-  font-size: 1.25rem;
-  font-weight: bold;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
   border: none;
+}
+
+.button {
+    text-transform: uppercase;
+    @include benton-reg(.712rem);
+    letter-spacing: 1.1px;
+    padding: 0.85em 1.5em;
+}
+
+// off-canvas mobile hamburger
+
+.menu-icon::after {
+    background: $dark-gray;
+    box-shadow: 0 7px 0 $dark-gray, 0 14px 0 $dark-gray;
+}
+
+.top-banner .hollow.button {
+    border: 1px solid $white;
+    &:hover {
+        border: 1px solid #5f422a;
+    }
+}
+
+
+input#wp-submit {
+    background: transparent;
+    color: $primary-color;
+    border: 1px solid $primary-color;
 }
