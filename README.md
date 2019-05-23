@@ -1,6 +1,6 @@
 # WealthStone
 
-This is the WordPress theme, based on Zurb's [Foundation for Sites 6](https://foundation.zurb.com/sites.html) for WealthStone real estate investment company. The theme began with a small and handy toolbox that contains the essentials needed to build any design, [FoundationPress](https://foundationpress.olefredrik.com/).
+This WealthStone real estate investment company WordPress theme, based on Zurb's [Foundation for Sites 6](https://foundation.zurb.com/sites.html). The theme began with [FoundationPress](https://foundationpress.olefredrik.com/) a small and handy toolbox that contains the essentials needed to build any design.
 
 ## Requirements
 
