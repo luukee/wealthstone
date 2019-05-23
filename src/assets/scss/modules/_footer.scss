@@ -1,26 +1,49 @@
 .footer-container {
   margin: 0 auto;
-  .menu-footer-container .menu-item:not(.button) {
-        @include breakpoint(medium) {
-            width: min-content;
-            min-width: 13vw;
-            max-width: 29vw;
-        }
-    }
 
-    .footer-grid section {
-        width: 100%;
-        @include breakpoint(medium) {
-            width: fit-content;
-            margin: 0 auto;
-            max-width: 62rem;
-        }
+    .footer-grid > {
 
+        .cell {
+            &:first-child {
+                @include breakpoint(medium only) {
+                    figure {
+                        margin: 0 auto;
+                    }
+                }
+                @include breakpoint(large) {
+                    max-width: 25%;
+                }
+            }
+
+            &:nth-child(2) {
+                @include breakpoint(medium only) {
+                    > .menu-footer-container {
+                        max-width: 60%;
+                        margin: 0 auto;
+                    }
+                }
+                @include breakpoint(large) {
+                    max-width: 50%;
+                }
+            }
+
+            &:last-child {
+                @include breakpoint(medium only) {
+                    > div {
+                        margin: 0 auto;
+                        max-width: 30%;
+                    }
+                }
+                @include breakpoint(large) {
+                    max-width: 25%;
+                }
+            }
+        }
     }
 
     .widget_nav_menu {
         .button {
-            height: min-content;
+            // height: min-content;
         }
     }
     .buttons {
@@ -37,15 +60,15 @@
     @include breakpoint(medium) {
         max-width: 62rem;
         margin: 0 auto;
-        padding: rem-calc(95) 0;
+        padding: rem-calc(75) 0;
         flex-direction: row;
     }
-  @include breakpoint(large) {
+    @include breakpoint(large) {
       flex-wrap: nowrap;
-  }
+    }
 
   section {
-    @include xy-cell(full, false, 1rem, left, medium, false);
+    // @include xy-cell(full, false, 1rem, left, medium, false);
 
   }
   figcaption.wp-caption-text {
@@ -79,19 +102,18 @@
 }
 
 .pre-footer {
+    width: 100%;
     h2 {
         margin-top: 0;
-    }
-    a {
-        color: $dark-gray;
     }
 }
 
 .footer-hero {
+    font-size: 170%;
     @include breakpoint(small) {
-      background: url('../images/demo/wealthstone-real-estate-investment4.png') bottom center;
       background-size: cover;
       background-position: bottom;
+      background-repeat: no-repeat;
       padding: rem-calc(65%) 0;
       margin: 0 0 rem-calc(32);
       height: auto;
@@ -100,11 +122,26 @@
     }
 
     @include breakpoint(medium) {
-      background: url('../images/demo/wealthstone-real-estate-investment4.png') bottom center;
       background-size: cover;
       background-position: center;
-      height: rem-calc(485);
+      height: auto;
       margin: 0 0 rem-calc(72);
+      min-height: max-content;
+    }
+    cite {
+        font-size: 100%;
+        font-style: normal;
+        color: $white;
+        padding-top: 1rem;
+    }
+    blockquote::before {
+        display: block;
+        position: absolute;
+        height: 0;
+        content: "“";
+        margin-top: -50px;
+        @include baskerville(130%);
+        color: $white;
     }
 }
 
@@ -112,13 +149,18 @@
     @include benton-reg(13px);
 
     .secondary-container {
-        @include xy-grid-container(62rem, 0);
+        // @include xy-grid-container(62rem, 0);
         border-top: 1px solid $medium-gray;
         padding: 2rem 0 1rem 0;
+        @include breakpoint(medium only) {
+            padding: 2rem 20px 1rem 20px;
+        }
         .cell {
             text-align: center;
             @include breakpoint(medium) {
-                text-align: left;
+                &:first-child {
+                    text-align: left;
+                }
                 &.copywright {
                     text-align: right;
                 }
@@ -133,7 +175,7 @@
 
 .talk-to-us-footer {
     background: $light-light-gray;
-    padding: 6rem 0;
+    padding: 6rem 0 84px 0;
 
 }
 
@@ -147,17 +189,15 @@
     > ul {
         @include breakpoint(medium) {
             flex-direction: row;
-            width: auto;
+            justify-content: flex-end;
+
+            > li {
+                width: calc(33.33333% - 7px);
+
+                &.menu a {
+                    padding: 0.3rem 0;
+                }
+            }
         }
     }
-}
-
-.menu-footer-container {
-    > li.menu-item {
-
-    }
-}
-
-
-.menu-footer-container ul > li {
 }

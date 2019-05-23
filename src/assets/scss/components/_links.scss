@@ -7,6 +7,53 @@
   outline: none;
 }
 
+a,
+a.primary {
+    color: $primary-color;
+    transition: color .2s ease-in-out;
+
+    &:hover {
+        color: $dark-gray;
+    }
+}
+
+[itemprop="telephone"] > a,
+[itemprop="fax"] > a,
+[itemprop="email"] {
+    color: $dark-gray;
+    transition: color .2s ease-in-out;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
 .learn-more .links h4 > a {
     color: $dark-gray;
+    transition: color .2s ease-in-out;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+// footer
+.menu-footer-container {
+
+    .menu-item a:hover,
+    .menu-item a:active,
+    .menu-item.current-menu-parent > a {
+        color: $primary-color;
+    }
+
+}
+
+
+
+.secondary-footer .secondary-container a:hover {
+    color: #b7855c;
+}
+
+.top-bar .desktop-menu .menu-item.top>a:hover {
+    color: #58595b;
 }

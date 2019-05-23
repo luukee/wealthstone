@@ -1,23 +1,53 @@
+
+#gtranslate_wrapper {
+    width: auto;
+    float: right;
+    right: 0!important;
+    text-align: right;
+    padding: initial;
+    opacity: .8;
+}
+
+@include breakpoint(small only) {
+    .off-canvas-content + #gtranslate_wrapper {
+        display: none;
+    }
+}
+
 // Navigation breakpoints
 .mobile-menu,
 .site-title-bar {
-    padding: 1.5rem .5rem;
+    padding: 1rem .5rem;
     .title-bar-left {
           display: flex;
-          flex-direction: row;
+          flex-direction: row-reverse;
           justify-content: space-between;
+          align-items: center;
+
     }
 
   @include hide-for(medium);
 }
 
-.mobile-off-canvas-menu .submenu-toggle::after {
-    border-color: $dark-gray transparent transparent;
-}
-
 .custom-logo-link img.custom-logo {
     @include breakpoint(small) {
         max-width: 45vw;
+    }
+    @include breakpoint(medium) {
+        max-width: 350px;
+        min-width: 300px;
+    }
+}
+
+@include breakpoint(medium only) {
+    .site-navigation {
+        display: flex;
+        flex-direction: column;;
+
+        .top-bar-left,
+        .top-bar-right {
+            margin: inherit;
+        }
     }
 }
 
@@ -36,17 +66,31 @@
   display: none; // prevents repaint caused by JS hiding menu onload
 }
 
+// horizontal menu
+.menu, .menu.horizontal {
+    flex-wrap: nowrap;
+}
+
 .off-canvas {
   > ul.menu {
     height: 100vh;
     padding: 1rem;
 
     a {
-      color: $dark-gray;
-      font-weight: 600;
-      font-size: rem-calc(20);
+        color: $primary-color;
+        @include benton-reg(.7rem);
+        line-height: 1.65;
     }
   }
+// menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-28 is-accordion-submenu-parent has-submenu-toggle
+// menu-item menu-item-type-custom menu-item-object-custom menu-item-36 is-submenu-item is-accordion-submenu-item
+    .submenu-toggle {
+        height: 28px;
+
+        &::after {
+            border-color: $primary-color transparent transparent;
+        }
+    }
 
   .menu .active > a { background-color: #ccc; }
 
@@ -62,7 +106,9 @@
 
 .mobile-menu,
 .mobile-off-canvas-menu {
-
+    .top.menu-item > a {
+        text-transform: uppercase;
+    }
   .menu .is-active > a {
     background-color: lighten($dark-nav-color, 5%);
   }
@@ -70,7 +116,7 @@
 
 // top-banner
 .top-banner {
-    padding: 0.75rem 0;
+    padding: 0 0 .75rem 0;
     background: $primary-color;
 
     @include breakpoint(medium) {
@@ -83,6 +129,12 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
+
+            p {
+                @include breakpoint(small only) {
+                    margin-bottom: .5rem;
+                }
+            }
             @include breakpoint(medium) {
                 flex-direction: row;
             }
@@ -106,8 +158,13 @@
 
 // top-bar and footer left to right balance
 .top-bar {
-    max-width: 62rem;
-    margin: 0 auto;
+    @include breakpoint(medium) {
+        max-width: 1026px;
+
+    }
+    @include breakpoint(large) {
+        margin: 0 auto;
+    }
 }
 
 // Tablet and desktop menu
@@ -128,33 +185,37 @@
         @include benton-reg(0.7rem);
     }
   .desktop-menu .menu-item.top {
-      > a {
-          color: $primary-color;
-          background: transparent;
-          text-transform: uppercase;
-          padding: 0 1rem 50px 1rem;
-          margin-bottom: 0px;
-          margin-top: 60px;
-        transition: border-bottom 0.1s ease-in;
-      }
-      &.current-menu-item > a {
+        > a {
+            color: $primary-color;
+            background: transparent;
+            text-transform: uppercase;
+            transition: border-bottom 0.1s ease-in;
+            @include breakpoint(medium) {
+                padding: 0 1rem 40px 1rem;
+                margin-bottom: 0px;
+            }
+            @include breakpoint(large) {
+                padding: 0 1rem 50px 1rem;
+                margin-top: 60px;
+            }
+        }
+        &.current-menu-item > a {
           color: $dark-gray;
-      }
-      &:hover > a {
+        }
+        &:hover > a {
             content: " ";
             border-bottom: 3px solid $primary-color;
             margin-bottom: -3px;
-      }
-  }
+        }
+    }
 
-  .menu .active > a { background-color: #ccc; }
+    .menu .active > a {
+      background-color: #ccc;
+    }
 
-  .menu>li:not(.menu-text):not(.is-submenu-item)>a {
-  }
-  .menu li.current-menu-item {
-      // border-bottom: 3px solid $primary-color;
+    .menu li.current-menu-item {
       margin-bottom: -3px;
-  }
+    }
 
     // login link
     .log-in {
@@ -166,22 +227,32 @@
       .submenu {
           border: 0;
       }
+
       .is-dropdown-submenu > li {
+          width: 100%;
           margin-top: 6px;
-          &:first-child {
-              margin-top: 16px;
-          }
           a {
               background: transparent;
           }
       }
       &.submenu {
           background-color: transparent;
+          width: 100%;
       }
   }
-  .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
-  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
-  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
+  .dropdown.menu .has-submenu.is-down-arrow a {
+      padding-right: 1rem;
+  }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after {
+      border: 0;
+  }
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after {
+      display: none;
+  }
+}
+
+.is-dropdown-submenu {
+    min-width: min-content;
 }
 
 .site-navigation {
@@ -201,4 +272,40 @@
 
 .nav-next {
   float:right;
+}
+
+// login nav
+.menu-item.tight {
+    @include breakpoint(medium) {
+        width: min-content;
+    }
+}
+
+
+// iPad ONLY navigation
+@include breakpoint(medium only) {
+    .top-bar .dropdown.menu .is-dropdown-submenu {
+        width: 100%;
+
+        // first-child
+        > li:first-child {
+            margin-top: 0;
+            border-top: 3px solid $primary-color;
+        }
+
+        // all the others
+        > li {
+            background-color: $white;
+            padding: 3px 3px 3px 12px;
+            margin-top: 0;
+        }
+    }
+}
+
+
+// lost password
+body.login-action-lostpassword {
+    background: white;
+
+
 }

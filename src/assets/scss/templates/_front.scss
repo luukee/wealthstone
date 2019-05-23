@@ -1,42 +1,72 @@
 // Page header
 .front-hero {
-  .marketing {
-    @include xy-grid-container(70rem);
-    @include xy-grid;
-  }
 
-  @include breakpoint(small) {
-     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    padding: rem-calc(85%) 0;
-    // margin: 0 0 rem-calc(32);
-    height: auto;
-    position: relative;
-    text-align: left;
-  }
+    @include breakpoint(small only) {
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: cover;
+        padding: 0;
+        height: 25vh;
+        position: relative;
+        text-align: left;
+    }
 
-  @include breakpoint(medium) {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: rem-calc(685);
-    // margin: 0 0 rem-calc(72);
-  }
+    @include breakpoint(medium) {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: rem-calc(505);
+    }
+
+    @include breakpoint(large) {
+        height: rem-calc(685);
+    }
+
+    .marketing {
+        @include xy-grid-container(70rem);
+        @include xy-grid;
+
+        @include breakpoint(small only) {
+            height: 100%;
+            align-items: flex-end;
+        }
+    }
 
   .subheader {
       margin-bottom: 2rem;
   }
 
+  // for front page only
+  &.front {
+      @include breakpoint(small only) {
+          background-size: auto 50%;
+          height: 70vh;
+      }
+
+      @include breakpoint(medium) {
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          height: rem-calc(685);
+      }
+  }
+
   .tagline {
     @include breakpoint(small) {
-      @include xy-cell(8);
+      @include xy-cell(12);
+      padding-top: 6rem;
     }
 
     @include breakpoint(medium) {
+      @include xy-cell(8);
+      padding-top: 6rem;
+    }
+
+    @include breakpoint(large) {
       @include xy-cell(4);
       padding-top: 6rem;
     }
+
   }
 
   h1 {
@@ -53,6 +83,9 @@
   }
 
   h4 {
+      @include breakpoint(small only) {
+          font-size: 1.16rem;
+      }
     color: $dark-gray;
     font-weight: 300;
     font-size: 1.3125rem;

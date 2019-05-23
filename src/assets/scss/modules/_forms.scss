@@ -1,0 +1,177 @@
+
+// mixins
+@mixin input {
+    border-radius: 4px !important;
+    border: none !important;
+    background: #eeeeee;
+    color: #4B4B4B;
+    font-family: benton-sans,sans-serif;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+    font-size: 12px !important;
+    min-height: 45px;
+    margin-bottom: 19px;
+    padding: 1rem 1.5rem;
+}
+
+@mixin button {
+    text-transform: uppercase;
+    @include benton-reg(.712rem);
+    letter-spacing: 1.1px;
+    padding: 0.85em 1.5em;
+    line-height: 22.8px;
+    min-height: 45px;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    padding: 0.85em 6.5em;
+    background-color: transparent;
+}
+
+.contact-form,
+.login-form,
+.password-reset input[type="text"] {
+
+
+
+
+
+
+}
+
+nf-field,
+nf-section,
+.nf-form-title {
+    .nf-field {
+        .nf-field-element {
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                @include input;
+            }
+            input[type="button"],
+            input:disabled {
+                @include button;
+            }
+        }
+    }
+    .nf-field-container {
+    margin-bottom: 0
+    }
+    .nf-error-msg {
+    @include benton-reg(12px);
+    }
+    .custom-html {
+    @extend .nf-error-msg;
+    }
+    .nf-form-fields-required {
+    display: none;
+    }
+    h3 {
+    @include baskerville-italic(20px);
+    color: $primary-color;
+    }
+}
+
+// submit button
+input#wp-submit {
+    background: transparent;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    width: 12rem;
+}
+
+// .login-form
+.login {
+    h2.entry-title {
+        text-align: center;
+    }
+}
+
+.greeting {
+@include baskerville(20px);
+text-align: center;
+    .primary {
+        font-style: italic;
+    }
+}
+// customer login
+.login-page .rmagic .rmrow {
+    width: 100%;
+}
+
+.login-form {
+
+    .login-submit {
+        text-align: center;
+    }
+}
+
+
+
+
+// RM form styles
+
+// register fields
+.rmagic {
+    .rmfieldset {
+        width: 48%;
+        margin: 0 1%;
+    }
+    .rmfield {
+        display: none;
+    }
+    .rminput {
+        margin: 0;
+        padding: 0;
+    }
+    .rmrow {
+
+        min-height: 0;
+        padding: 0;
+        @include breakpoint(medium) {
+            width: 48%;
+            margin: 0 1%;
+        }
+
+        .rminput input.register,
+        .rminput input[type="password"],
+        .rminput input[type="text"] {
+            @include input;
+        }
+    }
+    .rmfield, .rminput {
+        width: 100%;
+    }
+
+    .buttonarea {
+        input[type='submit'] {
+            font-size: 0.712rem;
+            @include benton-reg(12px);
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+
+    // login inputs
+    .rminput > input {
+        border-radius: 0;
+        @include benton-reg(12px);
+    }
+    // desktop specific media queries
+    :nth-child(3) {
+        @include breakpoint(medium) {
+            width: stretch;
+        }
+    }
+    &.rm_theme_matchmytheme + h6 + .primary {
+        display: none;
+    }
+} // end rmagic
+
+.rm_forgot_pass {
+    @include benton-reg(12px);
+
+    a {
+        color: $dark-gray;
+    }
+}

@@ -19,10 +19,9 @@
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 		?>
-		<h3><em><?php the_field("headline"); ?></em></h3>
 	</header>
 
-	<div class="content columns-2">
+	<div class="content">
 
 		<?php the_content(); ?>
 

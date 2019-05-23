@@ -171,7 +171,7 @@ $header-lineheight: 1.2;
 $header-margin-bottom: 1.25rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 24),
+    'h1': ('font-size': 35),
     'h2': ('font-size': 30),
     'h3': ('font-size': 19),
     'h4': ('font-size': 18),
@@ -179,8 +179,8 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 39),
-    'h2': ('font-size': 38),
+    'h1': ('font-size': 31),
+    'h2': ('font-size': 30),
     'h3': ('font-size': 25),
     'h4': ('font-size': 28),
     'h5': ('font-size': 20),
@@ -216,7 +216,7 @@ $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
 $blockquote-color: $white;
-$blockquote-padding: rem-calc(9 20 0 19);
+$blockquote-padding: rem-calc(19 20 0 19);
 $blockquote-border: none;
 $cite-font-size: rem-calc(13);
 $cite-color: $dark-gray;
@@ -256,12 +256,12 @@ $input-error-font-weight: $global-weight-bold;
 
 $accordion-background: $white;
 $accordion-plusminus: true;
-$accordion-title-font-size: rem-calc(12);
+$accordion-title-font-size: inherit;
 $accordion-item-color: $primary-color;
-$accordion-item-background-hover: $light-gray;
+$accordion-item-background-hover: scale-color($light-gray, $lightness: 90%);
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
-$accordion-content-border: 1px solid $light-gray;
+$accordion-content-border: none;
 $accordion-content-color: $body-font-color;
 $accordion-content-padding: 1rem;
 
@@ -465,10 +465,10 @@ $input-font-family: inherit;
 $input-font-size: rem-calc(16);
 $input-font-weight: $global-weight-normal;
 $input-line-height: $global-lineheight;
-$input-background: $white;
+$input-background: #EEEEEE;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
-$input-border: 1px solid $medium-gray;
+$input-border: none;
 $input-border-focus: 1px solid $dark-gray;
 $input-padding: $form-spacing / 2;
 $input-shadow: inset 0 1px 2px rgba($black, 0.1);
@@ -476,7 +476,7 @@ $input-shadow-focus: 0 0 5px $medium-gray;
 $input-cursor-disabled: not-allowed;
 $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 $input-number-spinners: true;
-$input-radius: $global-radius;
+$input-radius: 0;
 $form-button-radius: $global-radius;
 
 // 21. Label
@@ -901,7 +901,9 @@ $xy-block-grid-max: 8;
 
 /* Custom styles */
 
-
+@mixin paragraph-padding() {
+    padding: 0 5rem 0 0;
+}
 
 .em-link {
     font-style: italic;
@@ -916,7 +918,8 @@ $xy-block-grid-max: 8;
 }
 
 .primary {
-    color: $primary-color !important;
+    color: $primary-color;
+    transition: color .2s ease-in-out;
 }
 
 .br-top-primary {
@@ -1058,34 +1061,6 @@ $xy-block-grid-max: 8;
     z-index: 1;
 }
 
-.right-img-container {
-    .flex-container {
-        height: 85vh;
-    }
-}
-
-.left-image,
-.right-image {
-    background-size: 100%;
-    background-repeat: no-repeat;
-    @include breakpoint(medium) {
-        position: absolute;
-        width: 50vw;
-        height: 85vh;
-        min-height: 85vh;
-    }
-    width: 35vw;
-
-    + .flex-container {
-        @include breakpoint(medium) {
-            min-height: 85vh;
-        }
-    }
-    img {
-        visibility: hidden;
-    }
-}
-
 .z-down {
     z-index: 1;
 }
@@ -1095,10 +1070,11 @@ $xy-block-grid-max: 8;
 }
 
 
-.right-image {
-    right: 0;
-    height: 85vh;
-    @include breakpoint(large) {
-        width: 35vw;
-    }
+.not-visual {
+    visibility: hidden;
+}
+
+.off-page {
+    position: absolute;
+    text-indent: -100vw;
 }

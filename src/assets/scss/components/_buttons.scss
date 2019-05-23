@@ -1,3 +1,18 @@
+// mixins
+
+@mixin button {
+    text-transform: uppercase;
+    @include benton-reg(.712rem);
+    letter-spacing: 1.1px;
+    padding: 0.85em 1.5em;
+    line-height: 22.8px;
+    min-height: 45px;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    padding: 0.85em 6.5em;
+    background-color: transparent;
+}
+
 .sites-button {
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
@@ -5,10 +20,7 @@
 }
 
 .button {
-    text-transform: uppercase;
-    @include benton-reg(.712rem);
-    letter-spacing: 1.1px;
-    padding: 0.85em 1.5em;
+    @include button;
 }
 
 // off-canvas mobile hamburger
@@ -23,11 +35,4 @@
     &:hover {
         border: 1px solid #5f422a;
     }
-}
-
-
-input#wp-submit {
-    background: transparent;
-    color: $primary-color;
-    border: 1px solid $primary-color;
 }

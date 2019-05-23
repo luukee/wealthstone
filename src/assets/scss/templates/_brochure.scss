@@ -1,0 +1,49 @@
+// brochure instructions: https://gretathemes.com/wordpress-embed-pdf-viewer/
+
+.page-template-brochure {
+
+    .top-banner {
+        display: none;
+    }
+
+    .top-bar .dropdown.menu .is-dropdown-submenu > li:first-child {
+        margin-top: 3px;
+        @include breakpoint(medium only) {
+            margin-top: 0;
+        }
+    }
+
+    .top-bar .dropdown.menu .is-dropdown-submenu > li {
+        background-color: #FFFFFF;
+        padding: 6px;
+        margin-top: 0;
+        @include breakpoint(medium only) {
+            padding: 3px 3px 3px 12px;
+        }
+    }
+
+    .embed-container {
+        position: relative;
+        padding-bottom: 80vh;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+    }
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+.brochure {
+
+    .main-grid main.main-content-full-width > section {
+        padding: 0;
+    }
+}

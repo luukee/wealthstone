@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
+<?php //get_template_part( 'template-parts/featured-image' ); ?>
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content mt-4 pt-4">
@@ -17,7 +17,10 @@ get_header(); ?>
 				<img class="featured-hero card single-main-image" role="banner" data-interchange="[<?php the_post_thumbnail_url( 'featured-small' ); ?>, small], [<?php the_post_thumbnail_url( 'featured-medium' ); ?>, medium], [<?php the_post_thumbnail_url( 'featured-large' ); ?>, large], [<?php the_post_thumbnail_url( 'featured-xlarge' ); ?>, xlarge]">
 				</img>
 
-				<?php get_template_part( 'template-parts/content', '' ); ?>
+				<div class="single-content">
+					<?php get_template_part( 'template-parts/content', '' ); ?>
+				</div>
+
 			<?php endwhile; ?>
 
 		</main>

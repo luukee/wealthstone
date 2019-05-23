@@ -54,6 +54,10 @@ get_header(); ?>
 			<div class='embed-container'>
 				<iframe src='https://www.youtube.com/embed/zKu1Y-LlfNQ?modestbranding=1&autohide=1&showinfo=0&controls=0' frameborder='0' allowfullscreen></iframe>
 			</div>
+			<style>.codegena{position:relative;width:100%;height:0;padding-bottom:56.27198%;}.codegena iframe{position:absolute;top:0;left:0;width:100%;height:100%;}/*Youtube Embed Code : Created with Codegena.com */</style>
+			<div class="codegena">
+				<iframe width='100' height='59' src="https://www.youtube.com/embed/uJAPvpQ7fw4?&theme=dark&autohide=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3"frameborder="0"></iframe>
+			</div>
 		</div>
 	</div>
 </div>

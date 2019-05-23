@@ -58,52 +58,9 @@ require_once( 'library/gutenberg.php' );
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
 
 
-function my_login_logo() { ?>
-    <style type="text/css">
-        #login h1 a, .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/site-login-logo.png);
-		height:65px;
-		width:320px;
-		background-size: 320px 65px;
-		background-repeat: no-repeat;
-        	padding-bottom: 30px;
-        }
-    </style>
-<?php }
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
+// hide admin bar from all users except admin
+// https://www.wpbeginner.com/wp-tutorials/how-to-disable-wordpress-admin-bar-for-all-users-except-administrators/
+  show_admin_bar(false);
 
-
-function my_login_logo_url() {
-    return home_url();
-}
-add_filter( 'login_headerurl', 'my_login_logo_url' );
-
-
-
-
-
-/* Where to go if a login failed */
-function custom_login_failed() {
-	$login_page  = home_url('/login/');
-	wp_redirect($login_page . '?login=failed');
-	exit;
-}
-add_action('wp_login_failed', 'custom_login_failed');
-
-/* Where to go if any of the fields were empty */
-function verify_user_pass($user, $username, $password) {
-	$login_page  = home_url('/login/');
-	if($username == "" || $password == "") {
-		wp_redirect($login_page . "?login=empty");
-		exit;
-	}
-}
-add_filter('authenticate', 'verify_user_pass', 1, 3);
-
-/* What to do on logout */
-function logout_redirect() {
-	$login_page  = home_url('/login/');
-	wp_redirect($login_page . "?login=false");
-	exit;
-}
-add_action('wp_logout','logout_redirect');
+/* clean up admin bar settings */
+// https://digwp.com/2011/04/admin-bar-tricks/

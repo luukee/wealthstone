@@ -1,0 +1,4 @@
+.accordion-item:first-child > :first-child,
+:last-child:not(.is-active) > .accordion-title {
+    border-radius: 0;
+}

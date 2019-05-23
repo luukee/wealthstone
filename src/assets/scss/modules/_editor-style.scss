@@ -24,7 +24,11 @@ h4, .h4 {
         margin-top: 2rem;
         font-size: 1.5rem;
     }
+}
 
+h6, .h6 {
+    @include benton-reg(12px);
+    line-height: 16px;
 }
 
 h3, .h3 {
@@ -41,14 +45,19 @@ h2.entry-title {
 .l-r .copy h2,
 h2.entry-title a {
     color: $dark-gray;
-    font-size: 2rem;
+    // font-size: 2rem;
     &.primary {
         color:  $primary-color;
     }
 }
 
+.main-grid > section .grid-x ul > li {
+    padding: 0 0 1rem 0;
+}
+
 
 .toggle-button,
-[data-close] {
+[data-close],
+.read-buttons {
     @include baskerville-italic(20px);
 }
