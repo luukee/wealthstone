@@ -31,7 +31,9 @@ get_header(); ?>
 							<div class="cell medium-6">
 								<p class="primary">get in touch</p>
 								<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-								<div class="embed-container"><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.2967343236287!2d-118.416353884837!3d34.06190682466818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbf490292e85%3A0xc63207e03240a7d7!2s1880+Century+Park+E+%231014%2C+Los+Angeles%2C+CA+90067!5e0!3m2!1sen!2sus!4v1555416298271!5m2!1sen!2sus' width='100%' height='auto' frameborder='0' style='border:0' allowfullscreen></iframe></div>
+								<div class="embed-container">
+									<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.2967343236287!2d-118.416353884837!3d34.06190682466818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbf490292e85%3A0xc63207e03240a7d7!2s1880+Century+Park+E+%231014%2C+Los+Angeles%2C+CA+90067!5e0!3m2!1sen!2sus!4v1555416298271!5m2!1sen!2sus' width='100%' height='auto' frameborder='0' style='border:0' allowfullscreen></iframe>
+								</div>
 
 								<br>
 
