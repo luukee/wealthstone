@@ -1,5 +1,7 @@
 # WealthStone
 
+[![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=<badge_key>)](https://www.browserstack.com/automate/public-build/<badge_key>)
+
 This WealthStone real estate investment company WordPress theme, based on Zurb's [Foundation for Sites 6](https://foundation.zurb.com/sites.html). The theme began with [FoundationPress](https://foundationpress.olefredrik.com/) a small and handy toolbox that contains the essentials needed to build any design.
 
 ## Requirements
